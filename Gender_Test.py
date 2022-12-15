@@ -1,13 +1,12 @@
 import numpy as np
 from keras import losses, optimizers, models
 from keras import utils
-from PIL import Image
 from matplotlib import pyplot as plt
 from matplotlib import image as mpimg
 
 # Get Image-Path
 img_name = input("Was ist der Bild Name?")
-path = "TestPictures/" + img_name + ".jpg"
+path = "TestPictures/" + img_name
 
 # Shape
 img_width = 200
@@ -30,10 +29,10 @@ if pred > 0.5:
 else:
     pred = "Female"
 
-resizedpath = "ResizedPictures/" + img_name + ".jpg"
-image = Image.open(path)
-new_image = image.resize((200, 200))
-new_image.save(resizedpath)
+resizedpath = "ResizedPictures/" + img_name
+#image = Image.open(path)
+#new_image = image.resize((200, 200))
+img.save(resizedpath)
 
 plt.title(pred)
 plt.xlabel("X-Pixel")
